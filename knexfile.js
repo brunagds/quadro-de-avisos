@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+dotenv.config()
 
 const knex = require('knex')({
   client: 'mysql2', 
@@ -10,4 +11,4 @@ const knex = require('knex')({
   }
 })
 
-module.exports = knex
+module.exports = knex 
