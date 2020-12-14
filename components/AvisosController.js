@@ -16,6 +16,12 @@ router.get('/avisos/novo',(req,res)=>{
   res.render('formularios_avisos') 
 })
 
+router.get('/avisos/editar/:id', async (req, res)=>{
+  const id = req.params.id
+  const aviso = await Avisos.selecionarAviso(id)
+  res.render('formularios_avisos', {aviso})
+})
+
 router.post('/avisos/novo', async (req,res)=>{
   const titulo = req.body.titulo
   const data = req.body.data
@@ -23,6 +29,21 @@ router.post('/avisos/novo', async (req,res)=>{
 
   const msg = await Aviso.salvar({titulo, data, mensagem})
   res.render('formularios_avisos', {msg})
+})
+
+router.post("/avisos/editar/:id", async (req, res)=>{
+  const id = req.body.id
+  const titulo = req.body.titulo
+  const data = req.body.data
+  const mensagem = req.body.mensagem
+
+  const msg = await Aviso.editar({ titulo, data, mensagem}, id)
+
+  if(msg.tipo === "sucesso"){
+    res.redirect('/avisos')
+  }else{
+    res.render('formularios_avisos', {msg})
+  }
 })
 
 router.get("/avisos/excluir/:id", async (req,res)=>{
