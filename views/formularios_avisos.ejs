@@ -17,8 +17,11 @@
     <div class="container">
       <br><br>
 
-      <a href="http://"><i class="fas fa-long-arrow-alt-left"></i>Voltar</a>
-      <br><br>
+      <a href="/">
+        <button class="btn btn-cor text-white"><i class="fas fa-undo-alt"></i> Voltar</button>
+      </a>
+    <br>
+
       <% if (typeof msg !== 'undefined'){ %>
 
         <% if (msg.tipo == 'sucesso') { %>
@@ -70,7 +73,7 @@
             </div> 
             <div class="form-group text-right">
               <button name="submit" type="submit" class="btn btn-secondary">Limpar</button>
-              <button name="submit" type="submit" class="btn btn-primary"> <i class="far fa-calendar-check"></i> Salvar</button>
+              <button name="submit" type="submit" class="btn btn-cor text-white"> <i class="far fa-calendar-check"></i> Salvar</button>
             </div>
           </form>
         </div> <!--class card-body-->

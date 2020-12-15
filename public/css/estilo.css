@@ -6,3 +6,18 @@
   background: rgb(81,45,168);
   background: linear-gradient(20deg, rgba(80,45,168,1) 28%, rgba(124,77,255,1) 71%);
 }
+
+#corpo_mensagem{
+  padding: 20px;
+  margin: auto;
+  background-color: rgba(185, 180, 180, 0.5);
+  border-radius: 35px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cor{
+  background-color: #6610f2;
+}
